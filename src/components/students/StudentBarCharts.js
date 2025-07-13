@@ -53,11 +53,9 @@ const StudentBarCharts = () => {
         if (!user) {
             navigate("/");
         } else {
-            console.log(user)
             const getAllStudents = async () => {
                 try {
                     const data = await axios.post("http://localhost:7000/allStudents", { user, password, database, server });
-                    console.log(data)
                     if (data.status === 200) {
                         const students = data.data
                         const sortedStudentObjects = students.sort((a, b) => a.std_id - b.std_id);

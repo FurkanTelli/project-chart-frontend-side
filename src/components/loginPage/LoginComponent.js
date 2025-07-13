@@ -1,23 +1,17 @@
 import React, { useEffect, useState } from 'react'
 import "./style.css"
-import { useLocation, useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import { Message } from 'primereact/message';
-import { Button } from 'primereact/button';
-import axios, { Axios } from 'axios';
+import axios from 'axios';
 import Cookies from 'js-cookie';
 
 
 const LoginComponent = () => {
-  // const location = useLocation();
+
   const navigate = useNavigate();
   const [userInput, setUserInput] = useState({ userName: "", password: "", database: "", server: "" })
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false)
-
-  // useEffect(() => {
-
-  // }, [])
-
 
   const handleInputs = (val, type) => {
     if (type === "databaseServer") {
@@ -48,16 +42,16 @@ const LoginComponent = () => {
     setLoading(true)
     try {
       const sendRequest = await axios.post("http://localhost:7000/connect", userInput);
-      if(sendRequest.status === 200) { 
-        Cookies.set("username", userInput.userName, {expires: 1});
-        Cookies.set("password", userInput.password, {expires: 1});
-        Cookies.set("database", userInput.database, {expires: 1});
-        Cookies.set("server", userInput.server, {expires: 1});
+      if (sendRequest.status === 200) {
+        Cookies.set("username", userInput.userName, { expires: 1 });
+        Cookies.set("password", userInput.password, { expires: 1 });
+        Cookies.set("database", userInput.database, { expires: 1 });
+        Cookies.set("server", userInput.server, { expires: 1 });
+        setError(false);
         navigate("/admin")
-      } else {
-        setError(true)
-      }
+      } 
     } catch (error) {
+      setError(true)
       console.log(error)
     }
     setInterval(() => {
@@ -84,8 +78,8 @@ const LoginComponent = () => {
           <label for="password" className="form-label">Password</label>
           <input type="password" className="form-control" id="password" onChange={(e) => handleInputs(e, "password")} />
         </div>
-          {error ? <Message severity="error" text="Username is required" /> : ""}
         <button type="submit" onClick={loginAction} disabled={userInput.userName.length === 0 || userInput.password.length === 0 || userInput.database.length === 0 || userInput.server.length === 0 || loading === true} className="btn btn-dark form-btn">{loading ? <i className="pi pi-spin pi-cog" style={{ fontSize: '1rem' }}></i> : "Submit"}</button>
+        {error ? <Message severity="error" className="w-100 p-2 mt-2" text="Connection Error" /> : ""}
       </form>
     </div>
   )
