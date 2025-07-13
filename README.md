@@ -5,10 +5,10 @@ Bilgilendirme
 - Projenin bu frontend kısmında authentication işlemi başarılı olması sonucunda öğrencilerin bulundğu bir grafik sayfasına yönlendiriliyorsunuz.
  
 
-- Server:localhost
-- Database:chartstudents
-- username:Sa
-- password:Furkan249549
+- Server: localhost
+- Database: chartstudents
+- username: Sa
+- password: Furkan249549
 
 Kurulum: 
 -------------
