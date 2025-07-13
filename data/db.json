@@ -1,0 +1,64 @@
+{
+    "students": [
+        {
+            "std_id": 3,
+            "std_fullName": "Ahmet Yılmaz",
+            "student_grade": 85
+        },
+        {
+            "std_id": 4,
+            "std_fullName": "Ayşe Demir",
+            "student_grade": 92
+        },
+        {
+            "std_id": 5,
+            "std_fullName": "Mehmet Kaya",
+            "student_grade": 77
+        },
+        {
+            "std_id": 6,
+            "std_fullName": "Elif Aydın",
+            "student_grade": 64
+        },
+        {
+            "std_id": 7,
+            "std_fullName": "Caner Koç",
+            "student_grade": 88
+        },
+        {
+            "std_id": 8,
+            "std_fullName": "Zeynep Çelik",
+            "student_grade": 91
+        },
+        {
+            "std_id": 9,
+            "std_fullName": "Kemal Arslan",
+            "student_grade": 37
+        },
+        {
+            "std_id": 10,
+            "std_fullName": "Melike Şahin",
+            "student_grade": 49
+        },
+        {
+            "std_id": 11,
+            "std_fullName": "Burak Toprak",
+            "student_grade": 73
+        },
+        {
+            "std_id": 12,
+            "std_fullName": "Hatice Uçar",
+            "student_grade": 24
+        },
+        {
+            "std_id": 13,
+            "std_fullName": "Mert Erdem",
+            "student_grade": 78
+        },
+        {
+            "std_id": 20,
+            "std_fullName": "Test data",
+            "student_grade": 63
+        }
+    ]
+}
